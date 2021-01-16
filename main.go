@@ -3,6 +3,7 @@ package main
 import (
 	directoryScanner "CXplorer/modules/DirectoryScanner"
 	helpMenu "CXplorer/modules/Help"
+	networkSniffer "CXplorer/modules/NetworkSniffer"
 	portScanner "CXplorer/modules/PortScanner"
 	subdomainScanner "CXplorer/modules/SubDomainScanner"
 	"flag"
@@ -14,6 +15,8 @@ import (
 	"strings"
 )
 
+// Filter Validation as filter will be used in single colons
+
 func main() {
 	var baseURL string
 	var wordlist string
@@ -24,6 +27,7 @@ func main() {
 	var ports string
 	var outputFile string
 	var help bool
+	var net string
 
 
 	flag.StringVar(&baseURL, "u", "", "Enter the target URL as http://[domain or ip]/ " +
@@ -38,6 +42,7 @@ func main() {
 		"\nstart-end")
 	flag.StringVar(&outputFile, "o", "", "To Print Result in a given Output File")
 	flag.BoolVar(&help, "help", false, "For Detailed Help")
+	flag.StringVar(&net, "net", "", "For Network Sniffing")
 
 
 	flag.Parse()
@@ -57,6 +62,22 @@ func main() {
 		fmt.Println("=============================================================")
 		os.Exit(1)
 	} else if baseURL != "" && domain != "" && ipAddress != "" {
+		fmt.Println("ERROR: You cannot scan directories, subdomains and ports together.")
+		fmt.Println("=============================================================")
+		os.Exit(1)
+	} else if baseURL != "" && net != "" {
+		fmt.Println("ERROR: You cannot scan directories and capture packets together.")
+		fmt.Println("=============================================================")
+		os.Exit(1)
+	} else if domain != "" && net != "" {
+		fmt.Println("ERROR: You cannot scan subdomains and capture packets together.")
+		fmt.Println("=============================================================")
+		os.Exit(1)
+	} else if baseURL != "" && domain != "" && net != "" {
+		fmt.Println("ERROR: You cannot scan directories, subdomains and capture packets together.")
+		fmt.Println("=============================================================")
+		os.Exit(1)
+	} else if baseURL != "" && domain != "" && ipAddress != "" && net != "" {
 		fmt.Println("ERROR: You cannot use all the functions together.")
 		fmt.Println("=============================================================")
 		os.Exit(1)
@@ -129,6 +150,13 @@ func main() {
 		subdomainScanner.InitSubdomainScanner(domain, wordlist)
 	} else if ipAddress != "" {
 		portScanner.InitPortScanner(ipAddress, protocol, ports)
+	} else if net != "" {
+		if net == "read" {
+			data := strings.TrimSpace(os.Args[3])
+			networkSniffer.InitNetworkSniffer(net, data)
+		} else {
+			networkSniffer.InitNetworkSniffer(net, "")
+		}
 	}
 
 	fmt.Println("=============================================================")

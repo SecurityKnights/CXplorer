@@ -32,6 +32,21 @@ func Help() {
 	fmt.Println("  \t\t[Default: 1-1000]")
 	fmt.Println("  \t\t[Example: -ports 1-1000")
 
+	fmt.Println("\nNetwork Sniffer")
+	fmt.Println("-net\t\tMandatory Flag for Network Sniffing")
+	fmt.Println("    \t\t[Usage: -net <options>]")
+	fmt.Println("\nOptions:")
+	fmt.Println("list\t\t\tList all Devices")
+	fmt.Println("cap\t\t\tTo Start Capturing")
+	fmt.Println("write\t\t\tTo Capture and Save Data in a pcap file")
+	fmt.Println("read [file]\t\tTo Read a pcap file")
+	fmt.Println("filter\t\t\tTo Capture Data with given filter")
+	fmt.Println("filterWrite\t\tTo Capture and Save Data in a pcap file with filter")
+	fmt.Println("packetInfo\t\tTo Print Data of Packets at Ethernet, TCP, IPv4/v6 Layers")
+	fmt.Println("create\t\t\tTo Create your own packet and send it")
+	fmt.Println("decode\t\t\tTo Print Source and Destination Data of Packets")
+
+
 	fmt.Println("=============================================================")
-	fmt.Println("For any bugs contact: bugs@s3curityKnights.com")
+	fmt.Println("For any bugs/update raise an issue on: [github-link]")
 }
