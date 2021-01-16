@@ -2,6 +2,15 @@
   <profile version="1.0">
     <option name="myName" value="Project Default" />
     <inspection_tool class="GoUnhandledErrorResult" enabled="true" level="WARNING" enabled_by_default="true">
+      <functions>
+        <function importPath="fmt" name="Printf" />
+        <function importPath="fmt" name="Errorf" />
+        <function importPath="math/rand" name="Read" />
+        <function importPath="fmt" name="Println" />
+        <function importPath="fmt" name="Print" />
+        <function importPath="github.com/google/gopacket" name="SerializeLayers" />
+        <function importPath="fmt" name="Scanln" />
+      </functions>
       <methods>
         <method importPath="hash" receiver="Hash" name="Write" />
         <method importPath="strings" receiver="*Builder" name="Write" />
@@ -16,6 +25,7 @@
         <method importPath="io" receiver="ReadCloser" name="Close" />
         <method importPath="net" receiver="Conn" name="Close" />
         <method importPath="os" receiver="*File" name="Close" />
+        <method importPath="github.com/google/gopacket/pcapgo" receiver="*Writer" name="WritePacket" />
       </methods>
     </inspection_tool>
   </profile>
