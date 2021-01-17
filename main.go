@@ -32,7 +32,7 @@ func main() {
 
 	flag.StringVar(&baseURL, "u", "", "Enter the target URL as http://[domain or ip]/ " +
 		"\n (You can use https as well)")
-	flag.StringVar(&wordlist, " w", "wordlist.txt", "Enter the wordlist path")
+	flag.StringVar(&wordlist, " w", "/usr/local/CXplorer/wordlist.txt", "Enter the wordlist path")
 	flag.StringVar(&extensions, "f", "txt,html,php", "Enter the file extensions to be searched " +
 		"separated via comma(,) ")
 	flag.StringVar(&domain, "s", "", "Enter the domain you need to scan for subdomains")
