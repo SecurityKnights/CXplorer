@@ -5,7 +5,6 @@ CXplorer is an reconnaissance tool written in Go which is capable of scanning di
 
 ## Installation
 
-Note: Install go on your system. [Steps to Install](https://golang.org/doc/install)
 	
     git clone https://github.com/SecurityKnights/CXplorer
     cd CXplorer
