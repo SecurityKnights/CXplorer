@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="669f1b34-2030-4347-83af-3106bf65d286" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INSTALL.sh" beforeDir="false" afterPath="$PROJECT_DIR$/INSTALL.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/DirectoryScanner/DirectoryScanner.go" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DirectoryScanner/DirectoryScanner.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordlist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wordlist.txt" afterDir="false" />
-    </list>
+    <list default="true" id="669f1b34-2030-4347-83af-3106bf65d286" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
