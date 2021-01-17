@@ -10,7 +10,7 @@ CXplorer is an reconnaissance tool written in Go which is capable of scanning di
     cd CXplorer
     ./INSTALL.sh
     
-
+Note: If you get any error related to 'Unable to Create Directories', do the same manually and then run the './INSTALL.sh' command again. This can happen due to lack of permissions. 
 
 ## Usage
 
