@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="669f1b34-2030-4347-83af-3106bf65d286" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INSTALL.sh" beforeDir="false" afterPath="$PROJECT_DIR$/INSTALL.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/DirectoryScanner/DirectoryScanner.go" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DirectoryScanner/DirectoryScanner.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordlist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wordlist.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +48,7 @@
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

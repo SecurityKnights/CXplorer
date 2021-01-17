@@ -10,6 +10,10 @@ go get github.com/google/gopacket
 go get golang.org/x/net/bpf
 go get golang.org/x/sys/unix
 
+# Copying Wordlist
+sudo mkdir /usr/local/CXplorer
+sudo cp wordlist.txt /usr/local/CXplorer/
+
 # Building Tool
 go build -o CXplorer
 

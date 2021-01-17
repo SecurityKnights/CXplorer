@@ -19,15 +19,12 @@ var wg sync.WaitGroup
 func CheckURL(URL string) int {
 	resp, err := http.Get(URL)
 
-	defer resp.Body.Close()
-
 	if err != nil {
 		log.Fatal(err)
-	} else {
-		return resp.StatusCode
 	}
 
-	return 404
+	defer resp.Body.Close()
+	return resp.StatusCode
 }
 
 func DirectoryScan(URL string, words []string, fileExtensions []string, output bool, outputFile string) {
@@ -41,7 +38,7 @@ func DirectoryScan(URL string, words []string, fileExtensions []string, output b
 		if res == 200 || res == 301 {
 			if output {
 				data := "FOUND: " + tempURL + "\t[" + strconv.Itoa(res) + "]\n" + "Scanning Sub Directories in " +
-						tempURL + "\n"
+					tempURL + "\n"
 
 				f, err := os.OpenFile(outputFile, os.O_APPEND | os.O_CREATE | os.O_WRONLY, 0777)
 
@@ -58,7 +55,12 @@ func DirectoryScan(URL string, words []string, fileExtensions []string, output b
 				fmt.Printf("FOUND: %s \t [%d]\n", tempURL, res)
 				fmt.Printf("\nScanning Sub Directories in %s\n", tempURL)
 			}
-			go DirectoryScan(tempURL + "/", words, fileExtensions, output, outputFile)
+
+			if tempURL[len(tempURL) - 1:] == "/" {
+				go DirectoryScan(tempURL, words, fileExtensions, output, outputFile)
+			} else {
+				go DirectoryScan(tempURL + "/", words, fileExtensions, output, outputFile)
+			}
 		}
 	}
 
