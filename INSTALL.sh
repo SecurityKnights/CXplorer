@@ -1,6 +1,9 @@
+# Installing Go
+sudo apt-get install golang
+
 # Copying Custom Modules
-sudo mkdir /usr/local/go/src/CXplorer
-sudo cp -r modules/ /usr/local/go/src/CXplorer
+sudo mkdir $HOME/go/src/CXplorer
+sudo cp -r modules/ $HOME/go/src/CXplorer
 
 # Installing Required C Libraries
 sudo apt-get install libpcap-dev
