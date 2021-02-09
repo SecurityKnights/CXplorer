@@ -47,7 +47,7 @@ Note: If you get any error related to 'Unable to Create Directories', do the sam
 				[Default wordlist is loaded]
 	
 	Scanning Ports
-	-p			Target IP A ddress
+	-p			Target IP Address
 	-protocol		Specify the protocol
 				[Default: tcp]
 	-ports			Specify the start and end port with hyphen(-)
