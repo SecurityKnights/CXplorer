@@ -67,7 +67,7 @@ Note: If you get any error related to 'Unable to Create Directories', do the sam
 	filterWrite		To capture data andd save data in pcap file with filter
 	packetInfo		To print data of packetsat Ethernet,TCP,IPv4/v6 layers
 	create			To create your own packet and send it
-	decode			To print souorce and destination data of packets
+	decode			To print source and destination data of packets
 
 ## License
 You can check the License [here](https://github.com/SecurityKnights/CXplorer/blob/main/LICENSE)
