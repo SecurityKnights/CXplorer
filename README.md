@@ -56,7 +56,7 @@ Note: If you get any error related to 'Unable to Create Directories', do the sam
 
 	Network Sniffer
 	-net			Mandatory flag for network sniffing
-				[Usage: -net <options>
+				[Usage: -net <options>]
 	
 	Options
 	list			List all devices
