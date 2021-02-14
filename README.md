@@ -64,8 +64,8 @@ Note: If you get any error related to 'Unable to Create Directories', do the sam
 	write			To capture and save data in a pcap file
 	read[file]		To read a pcap file
 	filter			To capture data with given filter
-	filterWrite		To capture data andd save data in pcap file with filter
-	packetInfo		To print data of packetsat Ethernet,TCP,IPv4/v6 layers
+	filterWrite		To capture data and save data in pcap file with filter
+	packetInfo		To print data of packets at Ethernet,TCP,IPv4/v6 layers
 	create			To create your own packet and send it
 	decode			To print source and destination data of packets
 
