@@ -14,7 +14,7 @@ import (
 var wg sync.WaitGroup
 
 func PortScan(ipAddress string, protocol string) bool {
-	conn, err := net.DialTimeout(protocol, ipAddress, 60 * time.Second)
+	conn, err := net.DialTimeout(protocol, ipAddress, 3*time.Second)
 
 	if err != nil {
 		return false
@@ -28,7 +28,7 @@ func PortScanner(ipAddress string, protocol string, startPort, endPort int) {
 	defer wg.Done()
 
 	for i := startPort; i <= endPort; i++ {
-		temp := ipAddress + ":" + strconv.Itoa(i)
+		temp := net.JoinHostPort(ipAddress, strconv.Itoa(i))
 
 		if PortScan(temp, protocol) {
 			fmt.Printf("Port %d is open on %s\n", i, ipAddress)
@@ -55,6 +55,7 @@ func InitPortScanner(ipAddress string, protocol string, portRange string) {
 	fmt.Println("OS:\t\t\t", runtime.GOOS)
 	fmt.Println("ARCHITECTURE:\t\t", runtime.GOARCH)
 	fmt.Println("CPUs:\t\t\t", runtime.NumCPU())
+	fmt.Println("Protocol:\t\t", protocol)
 
 	fmt.Println("=============================================================")
 

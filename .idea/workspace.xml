@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="669f1b34-2030-4347-83af-3106bf65d286" name="Default Changelist" comment="">
+    <list default="true" id="669f1b34-2030-4347-83af-3106bf65d286" name="Default Changelist" comment="HTTP Status Codes Updated.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/DirectoryScanner/DirectoryScanner.go" beforeDir="false" afterPath="$PROJECT_DIR$/modules/DirectoryScanner/DirectoryScanner.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CXplorer" beforeDir="false" afterPath="$PROJECT_DIR$/CXplorer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/PortScanner/PortScanner.go" beforeDir="false" afterPath="$PROJECT_DIR$/modules/PortScanner/PortScanner.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/SubDomainScanner/SubDomainScanner.go" beforeDir="false" afterPath="$PROJECT_DIR$/modules/SubDomainScanner/SubDomainScanner.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,5 +74,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="HTTP Status Codes Updated." />
+    <option name="LAST_COMMIT_MESSAGE" value="HTTP Status Codes Updated." />
   </component>
 </project>
