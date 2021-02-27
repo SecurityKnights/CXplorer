@@ -29,21 +29,19 @@ func main() {
 	var help bool
 	var net string
 
-
-	flag.StringVar(&baseURL, "u", "", "Enter the target URL as http://[domain or ip]/ " +
+	flag.StringVar(&baseURL, "u", "", "Enter the target URL as http://[domain or ip]/ "+
 		"\n (You can use https as well)")
 	flag.StringVar(&wordlist, " w", "/usr/local/CXplorer/wordlist.txt", "Enter the wordlist path")
-	flag.StringVar(&extensions, "f", "txt,html,php", "Enter the file extensions to be searched " +
+	flag.StringVar(&extensions, "f", "txt,html,php", "Enter the file extensions to be searched "+
 		"separated via comma(,) ")
 	flag.StringVar(&domain, "s", "", "Enter the domain you need to scan for subdomains")
 	flag.StringVar(&ipAddress, "p", "", "Enter the target IP Address")
 	flag.StringVar(&protocol, "protocol", "tcp", "Enter the protocol for which Ports need to scanned")
-	flag.StringVar(&ports, "ports", "1-1000", "Enter the port range to be scanned in the format" +
+	flag.StringVar(&ports, "ports", "1-1000", "Enter the port range to be scanned in the format"+
 		"\nstart-end")
 	flag.StringVar(&outputFile, "o", "", "To Print Result in a given Output File")
 	flag.BoolVar(&help, "help", false, "For Detailed Help")
 	flag.StringVar(&net, "net", "", "For Network Sniffing")
-
 
 	flag.Parse()
 
@@ -84,8 +82,8 @@ func main() {
 	}
 
 	// Input Validations
-	if baseURL != "" || domain != "" {
-		if ("http://" !=  baseURL[:7]) || (baseURL[len(baseURL) - 1:] != "/") {
+	if baseURL != "" {
+		if ("http://" != baseURL[:7]) || (baseURL[len(baseURL)-1:] != "/") {
 			fmt.Println("ERROR: Invalid URL.")
 			fmt.Println("ERROR: Refer the help menu using -h or -help flag")
 			fmt.Println("=============================================================")
@@ -100,6 +98,16 @@ func main() {
 				fmt.Println("=============================================================")
 				os.Exit(1)
 			}
+		}
+	} else if domain != "" {
+		resp, err := http.Get(domain)
+
+		if err != nil {
+			log.Fatal(err)
+		} else if resp.StatusCode != 200 {
+			fmt.Println("ERROR: Target Unreachable.")
+			fmt.Println("=============================================================")
+			os.Exit(1)
 		}
 	} else if ipAddress != "" {
 		octets := strings.Split(ipAddress, ".")
@@ -129,7 +137,7 @@ func main() {
 		data := "=============================================================\n" +
 			"CXplorer v0.1" + "=============================================================\n"
 
-		f, err := os.OpenFile(outputFile, os.O_APPEND | os.O_CREATE | os.O_WRONLY, 0777)
+		f, err := os.OpenFile(outputFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
 
 		if err != nil {
 			log.Fatal(err)
@@ -164,7 +172,7 @@ func main() {
 	if output {
 		data := "=============================================================\n"
 
-		f, err := os.OpenFile(outputFile, os.O_APPEND | os.O_CREATE | os.O_WRONLY, 0777)
+		f, err := os.OpenFile(outputFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
 
 		if err != nil {
 			log.Fatal(err)
